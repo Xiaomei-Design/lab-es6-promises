@@ -7,9 +7,10 @@
 // }
 
 
-// // Iteration 1 using callbacks
+
+// Iteration 1 using callbacks
 // addFood(steak[0], '#steak', () => {
-//   // ... your code here
+
 //   addFood(steak[1], '#steak', () => {
 
 //     addFood(steak[2], '#steak', () => {
@@ -34,9 +35,8 @@
 
 
 
-// // Iteration 2 using `.then()`
+// Iteration 2 using `.then()`
 // addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
-//   // ... your code here
 //   addFood(mashPotatoes[1], '#mashPotatoes').then(() => {
 //   addFood(mashPotatoes[2], '#mashPotatoes').then(() => {
 //   addFood(mashPotatoes[3], '#mashPotatoes').then(() => {
@@ -48,25 +48,26 @@
 
 // Iteration 3 using async and await
 
-  // let eachStep1 = brusselSprouts;
-  async function makeFood(step, id) {
-    // ... your code here
-    
+// const addImage = img => document.querySelector('#table').innerHTML += `<img src="/public/images/${img}">`
+
+// solution 1
+
+async function makeFood(step, id) {
     for(let i = 0; i < step.length; i++) {
       await addFood(step[i], id);
     }
   }
- 
 
-  makeFood(brusselSprouts, '#brusselSprouts').then(()=>
-    addPic(pictures[2], '#table') // add pics
-  )
-  makeFood(steak, '#steak').then(()=>
-  addPic(pictures[1], '#table')
-)
-  makeFood(mashPotatoes, '#mashPotatoes').then(()=>
-  addPic(pictures[0], '#table')
-)
+
+//   makeFood(brusselSprouts, '#brusselSprouts').then(()=>
+//     addPic(pictures[2], '#table') // add pics
+//   )
+//   makeFood(steak, '#steak').then(()=>
+//   addPic(pictures[1], '#table')
+// )
+//   makeFood(mashPotatoes, '#mashPotatoes').then(()=>
+//   addPic(pictures[0], '#table')
+// )
 
 // async function addPictures(pic, id) {
 //   for (let i = 0; i < pic.length; i++) {
@@ -75,9 +76,22 @@
 // }
 //   addPic(pictures, '#table')
 
-// const 
-// Promise.all([
-//   addFood,
-//   addPic,
-// ])
-// .then(() => alert 'Dinner is served!')
+
+Promise.all([
+  makeFood(brusselSprouts, '#brusselSprouts').then(()=>
+    addPic(pictures[2], '#table') // add pics
+  ),
+  makeFood(steak, '#steak').then(()=>
+  addPic(pictures[1], '#table')
+),
+  makeFood(mashPotatoes, '#mashPotatoes').then(()=>
+  addPic(pictures[0], '#table')
+)
+])
+.then(() => {
+  document.body.innerHTML += `
+  <button onclick="new Audio('/public/media/dinnerIsServed.mp3').play()">
+  Dinner is served!
+  </button>
+  `
+})
