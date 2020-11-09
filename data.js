@@ -28,3 +28,10 @@ const mashPotatoes = [
   'mix',
   'enjoy'
 ];
+
+
+const pictures = [
+  '<img src="./public/images/mashPotatoes.jpg">',
+  '<img src = "./public/images/steak.jpg">',
+  '<img src= "./public/images/brusselSprouts.jpg">'
+]
