@@ -48,9 +48,7 @@
 
 // Iteration 3 using async and await
 
-// const addImage = img => document.querySelector('#table').innerHTML += `<img src="/public/images/${img}">`
-
-// solution 1
+const addImage = img => document.querySelector('#table').innerHTML += `<img src="/public/images/${img}.jpg">`
 
 async function makeFood(step, id) {
     for(let i = 0; i < step.length; i++) {
@@ -79,13 +77,13 @@ async function makeFood(step, id) {
 
 Promise.all([
   makeFood(brusselSprouts, '#brusselSprouts').then(()=>
-    addPic(pictures[2], '#table') // add pics
+  addImage('brusselSprouts') // add pics
   ),
   makeFood(steak, '#steak').then(()=>
-  addPic(pictures[1], '#table')
+  addImage('steak')
 ),
   makeFood(mashPotatoes, '#mashPotatoes').then(()=>
-  addPic(pictures[0], '#table')
+  addImage('mashPotatoes')
 )
 ])
 .then(() => {
