@@ -30,8 +30,8 @@ const mashPotatoes = [
 ];
 
 
-const pictures = [
-  '<img src="./public/images/mashPotatoes.jpg">',
-  '<img src = "./public/images/steak.jpg">',
-  '<img src= "./public/images/brusselSprouts.jpg">'
-]
+// const pictures = [
+//   '<img src="./public/images/mashPotatoes.jpg">',
+//   '<img src = "./public/images/steak.jpg">',
+//   '<img src= "./public/images/brusselSprouts.jpg">'
+// ]

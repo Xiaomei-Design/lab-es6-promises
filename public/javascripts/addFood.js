@@ -14,12 +14,12 @@ function addFood(step, id, callback) {
 /***** ^^^ DO NOT TOUCH *****/
 
 
-function addPic(pic, id, callback) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      document.querySelector('#table').innerHTML += pic;
-      resolve(pic);
-      callback ? callback() : ''; // For iteration one
-    }, Math.floor(Math.random() * 1000));
-  });
-}
+// function addPic(pic, id, callback) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       document.querySelector('#table').innerHTML += pic;
+//       resolve(pic);
+//       callback ? callback() : ''; // For iteration one
+//     }, Math.floor(Math.random() * 1000));
+//   });
+// }
